@@ -12,7 +12,8 @@
   "scripts": {
     "build:assets": "webpack --config webpack.config.js",
     "watch:assets": "webpack --config webpack.config.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "php bin/console server:run"
   },
   "author": "",
   "license": "UNLICENSED",

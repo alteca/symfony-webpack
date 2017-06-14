@@ -6,9 +6,9 @@
             <div id="welcome">
                 <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
             </div>
-            <h2>Hello {{ username }}!</h2>
+            <h2>Hello {{ user.getUsername() }}!</h2>
             {% if is_granted('ROLE_ADMIN')  %}
-                <a href="{{ path("admin_home") }}">Admin page</a>
+                <a href="{{ path("admin_homepage") }}">Admin page</a>
             {% endif %}
             <div id="status">
                 <p>

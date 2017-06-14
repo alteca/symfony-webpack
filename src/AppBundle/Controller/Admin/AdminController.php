@@ -1,26 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tvandermeersch
- * Date: 14/06/2017
- * Time: 15:54
- */
 
-namespace AppBundle\Controller;
-
-
+namespace AppBundle\Controller\Admin;
+use AppBundle\Controller\BaseController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * @Route("/admin")
  * Class AdminController
- * @package AppBundle\Controller
+ * @package AdminBundle\Controller
  */
-class AdminController extends Controller
+class AdminController extends BaseController
 {
     /**
-     * @Route("/", name="admin_home")
+     * @Route("/", name="admin_homepage")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()

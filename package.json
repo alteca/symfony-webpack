@@ -1,0 +1,31 @@
+{
+  "name": "symfony-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web/app.php",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "private": true
+  },
+  "scripts": {
+    "build:assets": "webpack --config webpack.config.js",
+    "watch:assets": "webpack --config webpack.config.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.6.1"
+  }
+}

@@ -2,8 +2,12 @@
 ===============
 
 A Symfony project with webpack for web assets
+Security is handled with in_memory provider
+available users :
+* User :  myuser / secure
+* Admin : myadmin / secure
 
-This app is using :
+This app is using
 * composer - php dependencies
 * npm - front dependencies
 * webpack 2 - build front dependencies
@@ -25,4 +29,5 @@ Compile assets
 
 or to build only once
 > npm run build:assets
+
 

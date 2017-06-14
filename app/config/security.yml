@@ -3,6 +3,9 @@
 security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
     providers:
         in_memory:
             memory:
@@ -10,6 +13,9 @@ security:
                     myuser:
                         password: '$2y$13$kRdK7hG5b4PcrgcgYPnWyeiB/NzjcfR6vWyiUZPe9MvJlZQBnm9jS'
                         roles: 'ROLE_USER'
+                    myadmin:
+                        password: '$2y$13$kRdK7hG5b4PcrgcgYPnWyeiB/NzjcfR6vWyiUZPe9MvJlZQBnm9jS'
+                        roles: 'ROLE_ADMIN'
     encoders:
         Symfony\Component\Security\Core\User\User: bcrypt
 #        AppBundle\Entity\User: bcrypt
@@ -35,3 +41,4 @@ security:
     access_control:
         - { path: "^/login$", roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
         - { path: "^/", roles: [ROLE_USER] }
+        - { path: "^/admin", roles: [ROLE_ADMIN] }

@@ -10,10 +10,11 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
     entry: {
-        app: './web_src/app/javascripts/app.js'
+        app: './web_src/app/javascripts/app.js',
+        admin: './web_src/admin/javascripts/admin.js'
     },
     output: {
-        filename: '[name]_bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'web/dist')
     },
     module: {
@@ -37,12 +38,17 @@ module.exports = {
     },
     plugins: [
         extractSass,
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: function (module) {
-                // this assumes your vendor imports exist in the node_modules directory
-                return module.context && module.context.indexOf('node_modules') !== -1;
-            }
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'vendor',
+        //     minChunks: function (module) {
+        //         // this assumes your vendor imports exist in the node_modules directory
+        //         return module.context && module.context.indexOf('node_modules') !== -1;
+        //     }
+        // }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            'window.jQuery': 'jquery'
         })
     ]
 };

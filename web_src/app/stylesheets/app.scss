@@ -1,3 +1,7 @@
 @import "variables";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "components/login";
+
+* {
+  font-family: 'Roboto', sans-serif;
+}

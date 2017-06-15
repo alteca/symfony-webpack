@@ -24,10 +24,10 @@ Install front dependencies
 Start server
 > php bin/console server:run
 
-Compile assets
-> npm run watch:assets
+Compile assets on the fly
+> npm run assets:watch
 
 or to build only once
-> npm run build:assets
+> npm run assets:build
 
 

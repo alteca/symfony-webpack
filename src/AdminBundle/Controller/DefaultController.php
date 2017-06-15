@@ -2,7 +2,8 @@
 
 namespace AdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Controller\BaseController;
+use AppBundle\Manager\UserManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
@@ -10,13 +11,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
  * Class DefaultController
  * @package AdminBundle\Controller
  */
-class DefaultController extends Controller
+class DefaultController extends BaseController
 {
     /**
      * @Route("/", name="admin_homepage")
      */
     public function indexAction()
     {
-        return $this->render('AdminBundle:Default:index.html.twig');
+        $users = $this->get(UserManager::class)->findAll();
+        return $this->render('AdminBundle:Default:index.html.twig', [
+            'users' => $users,
+        ]);
     }
 }

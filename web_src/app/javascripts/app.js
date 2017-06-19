@@ -7,11 +7,15 @@ import '../stylesheets/app.scss';
 function initBootstrapComponents() {
     // tooltips
     $('[data-toggle="tooltip"]').tooltip();
+    // dropdown
+    $('.dropdown-toggle').dropdown()
 }
 
 (function($) {
-    $('#welcome').html("Hello word! app js works!");
-    initBootstrapComponents();
+    $(document).ready(function() {
+        $('#welcome').html("Hello word! app js works!");
+        initBootstrapComponents();
+    });
 
     // set jquery dependencies
     window.$ = window.JQuery = $;

@@ -1,0 +1,36 @@
+.myapp {
+  .navbar.navbar-custom {
+    background-color: #01579B;
+    border-color: #01579B;
+    color: white;
+
+    .navbar-item-icon {
+      background-color: #0288D1;
+      color: white;
+    }
+
+    .navbar-brand,
+    a {
+      color: white
+    }
+
+    .navbar-brand:hover {
+      color: #E1F5FE;
+    }
+
+    // hover
+    .nav > li > a:hover,
+    .nav > li > a:focus,
+    .nav > .dropdown.open > a {
+      background-color: #0277BD;
+    }
+
+    .dropdown-menu {
+      background-color: #01579B;
+      li a:hover,
+      li a:focus {
+        background-color: #0277BD;
+      }
+    }
+  }
+}

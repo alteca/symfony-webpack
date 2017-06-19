@@ -7,3 +7,7 @@
 {% block javascripts %}
     <script type="application/javascript" src="{{ asset('dist/admin.js') }}"></script>
 {% endblock %}
+
+{% block navbar %}
+    {{ include('@Admin/components/_navbar.html.twig', { 'user': user } ) }}
+{% endblock %}

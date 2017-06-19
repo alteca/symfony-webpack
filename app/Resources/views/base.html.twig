@@ -15,7 +15,9 @@
         <script type="text/javascript" src="{{ asset('dist/app.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </head>
-        <body>
+    <body>
+        <div class="myapp">
+            {% block navbar %}{% endblock %}
             <div class="content">
                 {% for flashMessage in app.session.flashbag.get('notice') %}
                     <div class="alert alert-success" role="alert">
@@ -25,6 +27,6 @@
 
                 {% block content %}{% endblock %}
             </div>
-        </body>
+        </div>
     </body>
 </html>

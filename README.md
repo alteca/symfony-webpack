@@ -4,7 +4,8 @@
 A Symfony project with webpack for web assets
 Security is handled with doctrine user provider
 available users :
-* User :  test@test.fr / secure
+* User :  user@example.com / secure
+* Admin :  admin@example.com / secure
 
 This app is using
 * composer - php dependencies
@@ -26,6 +27,8 @@ Check the config in parameters.yml
 
 > php bin/console doctrine:schema:create
 
+Seed the database
+> php bin/console doctrine:fixtures:load
 
 ##DEV
 Start server
@@ -38,5 +41,6 @@ Compile assets on the fly
 
 or to build only once
 > npm run assets:build
+
 
 

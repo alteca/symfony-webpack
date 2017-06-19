@@ -31,10 +31,5 @@ services:
 
     AppBundle\Manager\UserManager:
         public: true
-        arguments: ['@doctrine.orm.entity_manager', 'AppBundle:User']
-
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+        arguments: ['@doctrine.orm.entity_manager', 'AppBundle:User', "@security.password_encoder"]
 

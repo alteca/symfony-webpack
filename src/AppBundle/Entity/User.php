@@ -137,8 +137,12 @@ class User implements UserInterface
      * Returns the roles granted to the user.
      * @return (Role|string)[] The user roles
      */
-    public function getRoles()
+    public function getRoles(): array
     {
+        if ($this->getFirstname() === 'user') {
+            return ['ROLE_USER'];
+        }
+
         return ['ROLE_ADMIN'];
     }
 

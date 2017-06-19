@@ -14,7 +14,23 @@ class DefaultController extends BaseController
      */
     public function indexAction(Request $request)
     {
-        /** @var User $user */
+        /**
+         * @var \AppBundle\Entity\User
+         */
+        $user = $this->getUser();
+        if (in_array('ROLE_ADMIN', $user->getRoles()))
+        {
+            return $this->redirectToRoute('admin_homepage');
+        }
+
+        return $this->redirectToRoute('welcome');
+    }
+
+    /**
+     * @Route("/welcome", name="welcome")
+     */
+    public function welcomeAction()
+    {
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);

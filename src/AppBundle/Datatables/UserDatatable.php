@@ -42,9 +42,8 @@ class UserDatatable extends AbstractDatatable
 
         $this->options->set(array(
             'classes' => Style::BOOTSTRAP_3_STYLE,
-            'individual_filtering' => true,
-            'individual_filtering_position' => 'head',
-            'order_cells_top' => true,
+            'individual_filtering' => false,
+            'order_cells_top' => false,
         ));
 
         $this->features->set(array(
@@ -63,26 +62,9 @@ class UserDatatable extends AbstractDatatable
             ->add('email', Column::class, array(
                 'title' => 'Email',
                 ))
-            ->add('password', Column::class, array(
-                'title' => 'Password',
-                ))
             ->add(null, ActionColumn::class, array(
                 'title' => $this->translator->trans('sg.datatables.actions.title'),
                 'actions' => array(
-                    array(
-                        'route' => 'user_show',
-                        'route_parameters' => array(
-                            'id' => 'id'
-                        ),
-                        'label' => $this->translator->trans('sg.datatables.actions.show'),
-                        'icon' => 'glyphicon glyphicon-eye-open',
-                        'attributes' => array(
-                            'rel' => 'tooltip',
-                            'title' => $this->translator->trans('sg.datatables.actions.show'),
-                            'class' => 'btn btn-primary btn-xs',
-                            'role' => 'button'
-                        ),
-                    ),
                     array(
                         'route' => 'user_edit',
                         'route_parameters' => array(

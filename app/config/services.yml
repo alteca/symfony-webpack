@@ -38,6 +38,3 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    app.datatable.users:
-        class: AppBundle\Datatables\UserDatatable
-#        parent: sg_datatables.datatable.abstract

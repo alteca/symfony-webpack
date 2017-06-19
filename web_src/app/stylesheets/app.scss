@@ -6,16 +6,15 @@
 @import "components/login";
 //@import "components/navbar";
 
-html, body, .myapp, .content {
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-}
 * {
   font-family: 'Roboto', sans-serif;
 }
 
 .sf-toolbar {
   position: fixed;
+}
+
+.content {
+  padding-left: 3em;
+  padding-right: 3em;
 }

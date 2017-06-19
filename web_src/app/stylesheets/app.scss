@@ -14,7 +14,13 @@
   position: fixed;
 }
 
-.content {
-  padding-left: 3em;
-  padding-right: 3em;
+.myapp {
+  .content {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  .form-control {
+    box-shadow: none;
+  }
 }

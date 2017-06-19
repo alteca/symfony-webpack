@@ -8,6 +8,9 @@ const extractSass = new ExtractTextPlugin({
     disable: process.env.NODE_ENV === "development"
 });
 
+// const jqueryWrapper = path.resolve(__dirname, 'web_src/app/javascripts/jquery-wrapper.js');
+const jqueryWrapper = 'jquery';
+
 module.exports = {
     entry: {
         app: './web_src/app/javascripts/app.js',
@@ -33,9 +36,24 @@ module.exports = {
             { test: /\.(woff|woff2)$/, use: "url-loader?limit=10000" },
             { test: /\.ttf$/, use: "file-loader" },
             { test: /\.eot$/, use: "file-loader" },
-            { test: /\.svg$/, use: "file-loader" }
+            { test: /\.svg$/, use: "file-loader" },
+            // {
+            //     test: require.resolve('jquery'),
+            //     use: [{
+            //         loader: 'expose-loader',
+            //         options: 'jQuery'
+            //     },{
+            //         loader: 'expose-loader',
+            //         options: '$'
+            //     }]
+            // }
         ]
     },
+    // resolve: {
+    //     alias: {
+    //         jquery: path.resolve(__dirname, 'web_src/app/javascripts/jquery-wrapper.js')
+    //     }
+    // },
     plugins: [
         extractSass,
         // new webpack.optimize.CommonsChunkPlugin({
@@ -45,10 +63,12 @@ module.exports = {
         //         return module.context && module.context.indexOf('node_modules') !== -1;
         //     }
         // }),
+
+        // for bootstrap
         new webpack.ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery',
-            'window.jQuery': 'jquery'
+            jQuery: jqueryWrapper,
+            $: jqueryWrapper,
+            "window.jQuery": "jquery"
         })
     ]
 };

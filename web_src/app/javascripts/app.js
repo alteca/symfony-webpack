@@ -1,5 +1,6 @@
-import $ from 'jquery';
 import 'bootstrap-sass';
+import 'datatables.net';
+import 'datatables.net-bs';
 
 import '../stylesheets/app.scss';
 
@@ -8,7 +9,11 @@ function initBootstrapComponents() {
     $('[data-toggle="tooltip"]').tooltip();
 }
 
-(function() {
+(function($) {
     $('#welcome').html("Hello word! app js works!");
     initBootstrapComponents();
-})();
+
+    // set jquery dependencies
+    window.$ = window.JQuery = $;
+})(jQuery);
+

@@ -1,6 +1,7 @@
 import 'bootstrap-sass';
 import 'datatables.net';
 import 'datatables.net-bs';
+import 'datatables.net-responsive';
 
 import '../stylesheets/app.scss';
 

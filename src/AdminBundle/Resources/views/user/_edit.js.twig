@@ -1,0 +1,7 @@
+$.fn.dataTable.Responsive.display.modal({
+    header: function (row) {
+        var data = row.data();
+        console.log(data);
+        return 'Details for ' + data.title;
+    }
+})

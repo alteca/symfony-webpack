@@ -1,29 +1,16 @@
 <?php
 
-namespace AppBundle\Datatables;
+namespace AdminBundle\Datatables;
 
 use Sg\DatatablesBundle\Datatable\AbstractDatatable;
 use Sg\DatatablesBundle\Datatable\Style;
 use Sg\DatatablesBundle\Datatable\Column\Column;
-use Sg\DatatablesBundle\Datatable\Column\BooleanColumn;
 use Sg\DatatablesBundle\Datatable\Column\ActionColumn;
-use Sg\DatatablesBundle\Datatable\Column\MultiselectColumn;
-use Sg\DatatablesBundle\Datatable\Column\VirtualColumn;
-use Sg\DatatablesBundle\Datatable\Column\DateTimeColumn;
-use Sg\DatatablesBundle\Datatable\Column\ImageColumn;
-use Sg\DatatablesBundle\Datatable\Filter\TextFilter;
-use Sg\DatatablesBundle\Datatable\Filter\NumberFilter;
-use Sg\DatatablesBundle\Datatable\Filter\SelectFilter;
-use Sg\DatatablesBundle\Datatable\Filter\DateRangeFilter;
-use Sg\DatatablesBundle\Datatable\Editable\CombodateEditable;
-use Sg\DatatablesBundle\Datatable\Editable\SelectEditable;
-use Sg\DatatablesBundle\Datatable\Editable\TextareaEditable;
-use Sg\DatatablesBundle\Datatable\Editable\TextEditable;
 
 /**
  * Class UserDatatable
  *
- * @package AppBundle\Datatables
+ * @package AdminBundle\Datatables
  */
 class UserDatatable extends AbstractDatatable
 {
@@ -75,13 +62,28 @@ class UserDatatable extends AbstractDatatable
                         'attributes' => array(
                             'rel' => 'tooltip',
                             'title' => $this->translator->trans('sg.datatables.actions.edit'),
-                            'class' => 'btn btn-primary btn-xs',
+                            'class' => 'btn btn-primary',
                             'role' => 'button'
                         ),
                     )
                 )
-            ))
-        ;
+            ));
+
+        $this->extensions->set(array(
+            //'responsive' => true,
+            'responsive' => array(
+                //'details' => true,
+                'details' => array(
+                    'display' => array(
+                        'template' => 'AdminBundle:user:_edit.js.twig',
+                        //'vars' => array('id' => '2', 'test' => 'new value'),
+                    ),
+                    'renderer' => array(
+                        'template' => 'AdminBundle:user:_renderer.js.twig',
+                    ),
+                ),
+            ),
+        ));
     }
 
     /**

@@ -2,10 +2,9 @@
 
 namespace AdminBundle\Controller;
 
+use AdminBundle\Datatables\UserDatatable;
 use AppBundle\Controller\BaseController;
-use AppBundle\Datatables\UserDatatable;
 use AppBundle\Entity\User;
-use AppBundle\Manager\UserManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;

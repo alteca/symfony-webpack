@@ -13,8 +13,8 @@ const jqueryWrapper = 'jquery';
 
 module.exports = {
     entry: {
-        app: './web_src/app/javascripts/app.js',
-        admin: './web_src/admin/javascripts/admin.js'
+        app: './src/AppBundle/Resources/javascripts/app.js',
+        admin: './src/AdminBundle/Resources/javascripts/admin.js'
     },
     output: {
         filename: '[name].js',

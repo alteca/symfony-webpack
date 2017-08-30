@@ -10,9 +10,8 @@
     "private": true
   },
   "scripts": {
-    "assets:build": "webpack --config webpack.config.js",
-    "assets:watch": "webpack --config webpack.config.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "assets:build": "webpack",
+    "assets:watch": "yarn assets:build -- --watch",
     "start": "php bin/console server:run"
   },
   "author": "",
